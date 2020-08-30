@@ -78,32 +78,28 @@ pipeline {
 						docker image list
 						docker image rm adelriob/capstoneudacity
 						docker image list
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
-						kubectl get all -n default -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
