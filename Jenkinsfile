@@ -43,6 +43,9 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./blue_ctl.yml
+						docker image list
+						docker ps
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
@@ -52,6 +55,9 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./green_ctl.yml
+						docker image list
+						docker ps
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
@@ -61,6 +67,9 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./blue_svc.yml
+						docker image list
+						docker ps
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
@@ -76,28 +85,7 @@ pipeline {
 					sh '''
 						kubectl apply -f ./green_svc.yml
 						docker image list
-						docker image list
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
-						kubectl get pods --all-namespaces -o wide
+						docker ps
 						kubectl get pods --all-namespaces -o wide
 					'''
 				}
