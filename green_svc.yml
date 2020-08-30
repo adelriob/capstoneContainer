@@ -1,9 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: lbCapstone
+  name: lbcapstone
   labels:
-    app: lbCapstone
+    app: lbcapstone
 spec:
   ports:
   - port: 8000
