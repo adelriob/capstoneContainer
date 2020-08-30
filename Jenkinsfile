@@ -41,6 +41,11 @@ pipeline {
 						docker image list
 						docker ps
 						kubectl get pods --all-namespaces -o wide
+						kubectl drain blue-w7dx5
+						kubectl delete pod blue-w7dx5
+						kubectl drain green-9bwvw
+						kubectl delete pod green-9bwvw
+						
 					'''
 				}
 			}
