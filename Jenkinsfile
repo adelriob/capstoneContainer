@@ -41,9 +41,6 @@ pipeline {
 						docker image list
 						docker ps
 						kubectl get pods --all-namespaces -o wide
-						kubectl delete pod blue-w7dx5
-						kubectl delete pod green-9bwvw
-						
 					'''
 				}
 			}
@@ -96,7 +93,7 @@ pipeline {
 						kubectl apply -f ./green_svc.yml
 						docker image list
 						docker ps
-						kubectl get pods --all-namespaces -o wide
+						kubectl get all -n default -o wide
 					'''
 				}
 			}
