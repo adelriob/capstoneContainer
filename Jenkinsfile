@@ -19,11 +19,11 @@ pipeline {
 		}
 		stage('Push Image To Dockerhub') {
 			steps {
-				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockeruserpass01', variable: 'SECRET']]){
+				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-					    echo sopotropo
-					    echo $SECRET
-						docker login -u sopotropo -p $SECRET
+					    echo $DOCKER_USERNAME
+					    echo $DOCKER_PASSWORD
+						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 						docker push adelriob/capstoneudacity
 					'''
 				}
