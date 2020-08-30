@@ -75,6 +75,7 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./green_svc.yml
+						docker image list
 						kubectl get all -n default -o wide
 						kubectl get all -n default -o wide
 						kubectl get all -n default -o wide
