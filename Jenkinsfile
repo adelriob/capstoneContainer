@@ -23,7 +23,7 @@ pipeline {
 					sh '''
 					    echo $DOCKER_USERNAME
 					    echo $DOCKER_PASSWORD
-						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+						docker login -u sopotropo -p lltyrell
 						docker push adelriob/capstoneudacity
 					'''
 				}
