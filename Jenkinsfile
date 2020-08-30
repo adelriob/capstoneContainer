@@ -76,6 +76,31 @@ pipeline {
 					sh '''
 						kubectl apply -f ./green_svc.yml
 						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
+						kubectl get all -n default -o wide
 					'''
 				}
 			}
