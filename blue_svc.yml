@@ -6,7 +6,7 @@ metadata:
     app: lbcapstone
 spec:
   ports:
-  - port: 8000
+  - port: 80
     targetPort: 80
   selector:
     app: blue
