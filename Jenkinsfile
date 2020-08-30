@@ -31,7 +31,7 @@ pipeline {
 		}
 		stage('Set current kubectl context') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
+				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						whoami
 						kubectl version --short --client
@@ -42,7 +42,7 @@ pipeline {
 		}
 		stage('Deploy blue container') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
+				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./blue_ctl.yml
 					'''
@@ -51,7 +51,7 @@ pipeline {
 		}
 		stage('Deploy green container') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
+				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./green_ctl.json
 					'''
@@ -60,7 +60,7 @@ pipeline {
 		}
 		stage('Create the service in the cluster, redirect to blue') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
+				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./blue_svc.yml
 					'''
@@ -74,7 +74,7 @@ pipeline {
         }
 		stage('Create the svc in Cluster, redirect to green') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
+				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./green_svc.yml
 					'''
