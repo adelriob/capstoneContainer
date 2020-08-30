@@ -35,7 +35,7 @@ pipeline {
 					sh '''
 						whoami
 						kubectl version --short --client
-						kubectl config use-context arn:aws:eks:us-east-2:793577097278:cluster/capstonecluster
+						kubectl config use-context arn:aws:eks:us-east-2:605149424449:cluster/capstonecluster
 					'''
 				}
 			}
