@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: lbCapstone
+  labels:
+    app: lbCapstone
+spec:
+  ports:
+  - port: 8000
+    targetPort: 80
+  selector:
+    app: green
+  type: LoadBalancer
