@@ -53,7 +53,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
-						kubectl apply -f ./green_ctl.json
+						kubectl apply -f ./green_ctl.yml
 					'''
 				}
 			}
