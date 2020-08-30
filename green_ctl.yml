@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: green
-        image: adelriob/capstoneudacity
+        image: sopotropo/capstoneudacity
         ports:
         - name: http-server
           containerPort: 80
