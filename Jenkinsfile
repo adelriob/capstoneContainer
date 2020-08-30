@@ -4,7 +4,7 @@ pipeline {
 		stage('Lint') {
 			steps {
 				sh '''
-					cd container
+					cd 
 					tidy -q -e *.html
 				'''
 			}
@@ -13,7 +13,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						cd container
+						cd 
 						docker build -t adelriob/capstoneUdacity .
 					'''
 				}
@@ -23,7 +23,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						cd container
+						cd 
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 						docker push adelriob/capstoneUdacity
 					'''
@@ -34,7 +34,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
 					sh '''
-						cd container
+						cd 
 						whoami
 						kubectl version --short --client
 						kubectl config use-context arn:aws:eks:us-east-2:793577097278:cluster/capstonecluster
@@ -46,7 +46,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
 					sh '''
-						cd container
+						cd 
 						kubectl apply -f ./blue_ctl.yml
 					'''
 				}
@@ -56,7 +56,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
 					sh '''
-						cd container
+						cd 
 						kubectl apply -f ./green_ctl.json
 					'''
 				}
@@ -66,7 +66,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
 					sh '''
-						cd container
+						cd 
 						kubectl apply -f ./blue_svc.yml
 					'''
 				}
@@ -81,7 +81,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-2', credentials:'AKIAYZZNXNNA6PCTBTOL') {
 					sh '''
-						cd container
+						cd 
 						kubectl apply -f ./green_svc.yml
 					'''
 				}
