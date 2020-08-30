@@ -76,6 +76,8 @@ pipeline {
 					sh '''
 						kubectl apply -f ./green_svc.yml
 						docker image list
+						docker image rm adelriob/capstoneudacity
+						docker image list
 						kubectl get all -n default -o wide
 						kubectl get all -n default -o wide
 						kubectl get all -n default -o wide
