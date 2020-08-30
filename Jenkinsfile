@@ -13,6 +13,9 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						docker build -t sopotropo/capstoneudacity .
+						docker image list
+						docker ps
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
@@ -23,6 +26,9 @@ pipeline {
 					sh '''
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 						docker push sopotropo/capstoneudacity
+						docker image list
+						docker ps
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
@@ -34,6 +40,9 @@ pipeline {
 						whoami
 						kubectl version --short --client
 						kubectl config use-context arn:aws:eks:us-east-2:605149424449:cluster/capstonecluster
+						docker image list
+						docker ps
+						kubectl get pods --all-namespaces -o wide
 					'''
 				}
 			}
