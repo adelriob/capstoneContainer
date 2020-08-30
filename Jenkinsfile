@@ -75,7 +75,6 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'aws-static') {
 					sh '''
 						kubectl apply -f ./green_svc.yml
-						kubectl delete service lbcapstone
 						kubectl get all -n default -o wide
 					'''
 				}
